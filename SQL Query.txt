@@ -1,0 +1,502 @@
+CREATE DATABASE employee;
+
+USE employee;
+
+-----Create Table----------------------------------------
+
+CREATE TABLE hobby(
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  hobby_name VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE employee(
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  first_name VARCHAR(100) NOT NULL, 
+  last_name VARCHAR(100) NOT NULL, 
+  age INT, 
+  mobile_number VARCHAR(15), 
+  address VARCHAR (255)
+);
+
+CREATE TABLE employee_salary (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  fk_employee_id INT, 
+  salary DECIMAL(10, 2), 
+  employee_date DATE, 
+  FOREIGN KEY (employee_id) REFERENCES employee(id)
+);
+
+CREATE TABLE employee_hobby (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  fk_employee_id INT, 
+  fk_hobby_id INT, 
+  FOREIGN KEY (employee_id) REFERENCES employee(id), 
+  FOREIGN KEY (hobby_id) REFERENCES hobby(id)
+);
+
+-----Insert Data----------------------------------------
+
+INSERT INTO hobby (hobby_name) 
+VALUES 
+  ("Reading Books");
+INSERT INTO hobby (hobby_name) 
+VALUES 
+  ("Playing Music");
+INSERT INTO hobby (hobby_name) 
+VALUES 
+  ("Dancing");
+INSERT INTO hobby (hobby_name) 
+VALUES 
+  ("Blogging");
+INSERT INTO hobby (hobby_name) 
+VALUES 
+  ("Travelling");
+INSERT INTO hobby (hobby_name) 
+VALUES 
+  ("Singing");
+INSERT INTO hobby (hobby_name) 
+VALUES 
+  ("Swimming");
+INSERT INTO hobby (hobby_name) 
+VALUES 
+  ("Management");
+
+
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Rakesh", "Sharma", 21, 5643244554, 
+    "305 - 14th Ave. S. Suite 3B"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Hemiksah", "Joshi", 20, 5643244554, 
+    "Vijaynagar Cross road"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Jaya", "Bacchan", 22, 5643244554, 
+    "ul. Filtrowa 68"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Saina", "Mirza", 22, 5643244554, "Rambug Maninagar"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Saloni", "Goinka", 19, 5643244554, 
+    "Gangotri circle, Nikol"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Rina", "Nogi", 23, 8756852331, " 05 Maheshwari nagar"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Maya", "Mishra", 21, 8756852356, " 09 Ganeshpura"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Rina", "Varma", 23, 5687852331, " 123 Harinandan park"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Rina", "Goinka", 23, 2134445331, " 505 - Jogeshwari nagar"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Ayushi", "Dabhi", 22, 9925947576, 
+    " Govind Vadi"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Abhisekh", "Bhadoriya", 21, 3248752312, 
+    " 05 Maheshwari nagar"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Renita", "Koreyya", 20, 8756852678, 
+    " 07 Maheshwari nagar"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Asha", "Bhosle", 19, 8556852378, " 04 Haridarshan Park"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "nirmal", "Makvana", 18, 8985685289, 
+    " 100 Bhulabhai Park"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Abhay", "Trivedi", 18, 8985685289, 
+    " 162 Mohbbatnagar"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "jinal", "Bhavsar", 21, 8985623444, 
+    " 16 Usmanpura"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Mahesh", "Solanki", 22, 203485289, 
+    " 234 - Wonder Point"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Geetanjali", "Singhania", 29, 5551685289, 
+    " 208 Jasodanagar"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Manav", "Mehta", 25, 2004685289, " 17 Usmanpura"
+  );
+INSERT INTO employee (
+  first_name, last_name, age, mobile_number, 
+  address
+) 
+VALUES 
+  (
+    "Sunita", "Makvana", 19, 8985685200, 
+    " 12 Khanpur"
+  );
+
+
+
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (6, 23000, '2008-02-15');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (4, 25000, '2004-02-15');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (1, 32000, '2005-02-13');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (14, 35000, '2006-02-18');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (15, 50000, '2005-02-19');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (5, 60000, '2024-02-20');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (10, 24000, '2024-03-19');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (18, 56000, '2022-06-15');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (3, 70000, '2023-08-20');
+INSERT INTO employee_salary (
+  fk_employee_id, salary, employee_date
+) 
+VALUES 
+  (20, 32000, '2015-01-02');
+
+
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (12, 1);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (19, 3);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (5, 4);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (5, 1);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (13, 5);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (10, 4);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (12, 2);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (11, 8);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (12, 7);
+INSERT INTO employee_hobby (fk_employee_id, fk_hobby_id) 
+VALUES 
+  (13, 6);
+
+
+-----------------Update data---------------------------
+
+UPDATE 
+  hobby 
+SET 
+  hobby_name = "Calligraphy" 
+WHERE 
+  id = 2;
+UPDATE 
+  employee 
+SET 
+  age = "25" 
+WHERE 
+  first_name = 'Saloni';
+UPDATE 
+  employee_salary 
+SET 
+  salary = "45000" 
+WHERE 
+  fk_employee_id = '14';
+UPDATE 
+  employee_hobby 
+SET 
+  fk_hobby_id = "4" 
+WHERE 
+  fk_employee_id = '5';
+
+--------------------Delete record--------------------------
+
+DELETE FROM 
+  hobby 
+WHERE 
+  hobby_name = 'Singing';
+DELETE FROM 
+  hobby 
+WHERE 
+  hobby_name = 'Dancing';
+
+DELETE FROM 
+  employee 
+WHERE 
+  age = '29';
+DELETE FROM 
+  employee 
+WHERE 
+  id = '11';
+
+DELETE FROM 
+  employee_salary 
+WHERE 
+  employee_date = '2005-02-19';
+DELETE FROM 
+  employee_salary 
+WHERE 
+  salary = '45000';
+
+DELETE FROM 
+  employee_hobby 
+WHERE 
+  fk_hobby_id = '2';
+DELETE FROM 
+  employee_hobby 
+WHERE 
+  fk_employee_id = '10';
+
+---------Select seprate query---------------------------
+
+SELECT 
+  hobby_name 
+FROM 
+  hobby;
+SELECT 
+  first_name, 
+  age 
+FROM 
+  employee;
+SELECT 
+  fk_employee_id, 
+  salary 
+FROM 
+  employee_salary;
+SELECT 
+  fk_employee_id, 
+  fk_hobby_id 
+FROM 
+  employee_hobby;
+
+SELECT 
+  * 
+FROM 
+  hobby;
+SELECT 
+  * 
+FROM 
+  employee_salary;
+SELECT 
+  * 
+FROM 
+  employee_hobby;
+SELECT 
+  * 
+FROM 
+  employee;
+
+
+
+-------truncate-------------------
+
+TRUNCATE TABLE hobby;
+TRUNCATE TABLE employee;
+TRUNCATE TABLE employee_salary;
+TRUNCATE TABLE employee_hobby;
+
+--------Create a single query to get data in single column---------
+
+SELECT 
+  first_name AS name_list 
+FROM 
+  employee 
+UNION ALL 
+SELECT 
+  hobby_name 
+FROM 
+  hobby;
+
+------get employee name and salary---------------
+
+
+SELECT 
+  employee.first_name, 
+  employee.last_name, 
+  employee_salary.salary 
+FROM 
+  employee 
+  JOIN employee_salary ON employee.id = employee_salary.fk_employee_id;
+
+
+-----Sum of salary----------------------------------
+
+
+SELECT
+e.id,
+e.first_name,
+SUM(es.salary)
+FROM employee e 
+ JOIN employee_salary es ON e.id = es.fk_employee_id GROUP BY id;
+
+
+--------hobby add in one line with comma separator------------------
+
+SELECT 
+  CONCAT(e.first_name, " ", e.last_name) AS 'Employee Name', 
+  IFNULL(
+    SUM(es.salary), 
+    "N/A"
+  ) AS 'total salary', 
+  (
+    SELECT 
+      IFNULL(
+        GROUP_CONCAT(h.hobby_name SEPARATOR ', '), 
+        "N/A"
+      ) 
+    FROM 
+      hobby h 
+      INNER JOIN employee_hobby eh ON h.id = eh.fk_hobby_id 
+    WHERE 
+      eh.fk_employee_id = e.id
+  ) AS 'hobby Name' 
+FROM 
+  employee e 
+  LEFT JOIN employee_salary es ON e.id = es.fk_employee_id 
+GROUP BY 
+  e.id 
+ORDER BY 
+  e.first_name;
+---------------------------------
+
+
